@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentarios de pacientes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-black text-white p-6">
+    <h1 class="text-3xl gradient-text mb-4">Comentarios de pacientes</h1>
+    <ul>
+        {% for m in mensajes %}
+        <li class="mb-2"><strong>{{ m[0] }}</strong> ({{ m[2] }}): {{ m[1] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-outline mt-6 inline-block">Volver al dashboard</a>
+</body>
+</html>
